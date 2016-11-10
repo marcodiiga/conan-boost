@@ -75,7 +75,7 @@ class BoostConan(ConanFile):
         "without_type_erasure=False", \
         "without_wave=False"
 
-    url="https://github.com/lasote/conan-boost"
+    url="https://github.com/marcodiiga/conan-boost"
     exports = ["FindBoost.cmake"]
     license="Boost Software License - Version 1.0. http://www.boost.org/LICENSE_1_0.txt"
     short_paths = True
@@ -271,8 +271,8 @@ class BoostConan(ConanFile):
         if self.options.header_only:
             return
 
-        libs = ("unit_test_framework prg_exec_monitor test_exec_monitor atomic container date_time exception filesystem "
-                "graph iostreams locale log_setup log math_c99 math_c99f math_c99l math_tr1 "
+        libs = ("unit_test_framework prg_exec_monitor test_exec_monitor atomic container date_time exception "
+                "graph iostreams locale log_setup log filesystem math_c99 math_c99f math_c99l math_tr1 "
                 "math_tr1f math_tr1l program_options random regex wserialization serialization "
                 "signals coroutine context wave timer thread chrono system").split()
 
