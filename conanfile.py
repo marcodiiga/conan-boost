@@ -14,6 +14,7 @@ class BoostConan(ConanFile):
         "header_only": [True, False],
         "fPIC": [True, False],
         "python": [True, False], # Note: this variable does not have the 'without_' prefix to keep the old shas
+        "valgrind": [True, False],
         "without_atomic": [True, False],
         "without_chrono": [True, False],
         "without_container": [True, False],
@@ -47,6 +48,7 @@ class BoostConan(ConanFile):
         "header_only=False", \
         "fPIC=False", \
         "python=False", \
+        "valgrind=False", \
         "without_atomic=False", \
         "without_chrono=False", \
         "without_container=False", \
@@ -154,6 +156,7 @@ class BoostConan(ConanFile):
         flags.append("address-model=%s" % ("32" if self.settings.arch == "x86" else "64"))
 
         option_names = {
+            "valgrind=on": self.options.valgrind,
             "--without-atomic": self.options.without_atomic,
             "--without-chrono": self.options.without_chrono,
             "--without-container": self.options.without_container,
