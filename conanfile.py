@@ -2,6 +2,8 @@ from conans import ConanFile
 from conans import tools
 import platform, os, sys
 
+channel = os.getenv("CONAN_CHANNEL", "stable")
+username = os.getenv("CONAN_USERNAME", "marcodiiga")
 
 class BoostConan(ConanFile):
     name = "Boost"
